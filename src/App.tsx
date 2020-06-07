@@ -31,6 +31,20 @@ const Navbar = styled.nav({
   justifyContent : "center",
   display: "flex",
   textAlign: "center",
+  animation : "fadeIn ease 4s",
+  "@keyframes fadeIn" : {
+    "0%" : {
+      opacity : 0,
+    },
+
+    "25%" : {
+      opacity: 0, 
+    },
+
+    "100%" : {
+      opacity : 1,
+    }
+  },
 
 })
 
