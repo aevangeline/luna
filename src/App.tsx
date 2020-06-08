@@ -115,6 +115,7 @@ const MainContent = styled.main({
   ".fade-enter.fade-enter-active": {
     opacity: 1,
     transition: "opacity 500ms ease-in",
+    transitionDelay: "500ms"
   },
 
   ".fade-exit": {
@@ -124,7 +125,6 @@ const MainContent = styled.main({
   ".fade-exit.fade-exit-active": {
     opacity: 0,
     transition: "opacity 500ms ease-in",
-
   },
 
   "div.transition-group": {
@@ -173,7 +173,7 @@ function App() {
             unmountOnExit
             key={location.key}
             classNames="fade"
-            timeout={{ exit: 500, enter: 500 }}
+            timeout={{ exit: 1000, enter: 1000 }}
           >
             <section className="route-section">
               {/* Main Content in Switches */}
