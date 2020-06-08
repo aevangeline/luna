@@ -4,19 +4,23 @@ import styled from 'styled-components';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 
-const HomeText = styled.p({
+const HomeText = styled.h2({
     textAlign: "center",
     fontFamily: "'Quattrocento', serif",
-    fontSize: "max(3vw, 14px)",
+    fontSize: "max(4vw, 14px)",
+    fontWeight: "normal"
 })
 
-const roles = [
-    "Tech Policy Researcher.",
-    "Meme Queen.",
-    "Software Engineer.",
-    "Black Trans Woman.",
-    "Ph.D. Student.",
-    "Goth Wannabe.",
+const VerticalBox = styled.div({
+})
+
+const displayText = [
+    "Tech Policy Researcher",
+    "Meme Queen",
+    "Software Engineer",
+    "Black Trans Woman",
+    "Ph.D. Student",
+    "Goth Wannabe",
     "Human?"
 ]
 
@@ -27,7 +31,13 @@ interface HomeProps {
 
 const cycleTime = 3000;
 
+
+
 const TextFader = styled.div({
+
+    paddingTop: "15vh",
+    paddingBottom : "5vh",
+
     ".fade-enter": {
         opacity: 0,
     },
@@ -54,10 +64,9 @@ const TextFader = styled.div({
     ".fading-text": {
         position: "absolute",
         width: "100%",
-        top : 0, 
+        top: 0,
         left: 0,
         padding: 0,
-        marginTop: 0,
     }
 })
 
@@ -73,7 +82,7 @@ export default class Home extends React.Component<{}, HomeProps> {
     }
 
     updateRole() {
-        this.setState({ index: (this.state.index + 1) % roles.length })
+        this.setState({ index: (this.state.index + 1) % displayText.length })
     }
 
 
@@ -94,24 +103,23 @@ export default class Home extends React.Component<{}, HomeProps> {
             <TextFader>
                 <Row>
                     <Col xs={12}>
-                        <HomeText>Welcome!</HomeText>
-                        <HomeText>I'm Aurelia.</HomeText>
-                        <HomeText>I am a</HomeText>
-                        <TransitionGroup className="transition-group">
+                        <VerticalBox>
+                            <TransitionGroup className="transition-group">
 
-                            {roles.map((value, index) => this.state.index == index &&
+                                {displayText.map((value, index) => this.state.index == index &&
 
-                                <CSSTransition
-                                    key={index}
-                                    classNames="fade"
-                                    timeout={{ exit: 1000, enter: 1000 }}
-                                >
-                                    <HomeText className="fading-text">
-                                        {value}
-                                    </HomeText>
+                                    <CSSTransition
+                                        key={index}
+                                        classNames="fade"
+                                        timeout={{ exit: 1000, enter: 1000 }}
+                                    >
+                                        <HomeText className="fading-text">
+                                            {value}
+                                        </HomeText>
 
-                                </CSSTransition>)}
-                        </TransitionGroup>
+                                    </CSSTransition>)}
+                            </TransitionGroup>
+                        </VerticalBox>
                     </Col>
                 </Row>
             </TextFader>
