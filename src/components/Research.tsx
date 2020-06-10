@@ -5,7 +5,7 @@ export default class Research extends React.Component<{}, {}> {
     
     constructor(props : {}) {
         super(props)
-        this.state = props;
+        this.state = {};
     }
 
     render() {

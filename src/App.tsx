@@ -6,10 +6,8 @@ import {
   Route,
   NavLink,
   useLocation,
+  Redirect,
 } from 'react-router-dom';
-
-import { animationName } from './components/PageStyles';
-
 
 // import routes
 import Home from './components/Home';
@@ -22,6 +20,7 @@ const NameHeader = styled.h1({
   fontFamily: "'Cinzel Decorative', cursive",
   fontSize: "5vw",
   opacity: 0,
+  fontKerning: "normal", 
   animation: "fadeIn ease 3s",
   animationFillMode: "forwards",
   "@keyframes fadeIn": {
@@ -41,6 +40,7 @@ const Navbar = styled.nav({
   justifyContent: "center",
   display: "flex",
   textAlign: "center",
+  fontKerning: "normal", 
   opacity: 0,
   animation: "fadeIn ease 4s",
   animationFillMode: "forwards",
@@ -72,7 +72,7 @@ const NavItem = styled.li({
   marginBottom: "1vh",
   marginLeft: "1vw",
   marginRight: "1vw",
-  width: "min(30vw, 200px)",
+  width: "min(30vw, 250px)",
 })
 
 const NavBarLink = styled(NavLink)({
@@ -82,7 +82,8 @@ const NavBarLink = styled(NavLink)({
   // Font Options
   fontFamily: "'Cinzel', serif",
   fontWeight: 700,
-  fontSize: "min(3vw, 14px)",
+  fontSize: "min(3vw, 20px)",
+  textAlign: "center",
 
   "&.active": {
     color: "#e6c200",
@@ -93,11 +94,7 @@ const MainContent = styled.main({
   opacity: 0,
   animation: "fadeIn ease 5s",
   animationFillMode: "forwards",
-  position: "relative",
-  top: 0,
-  bottom: 0,
-  left: 0,
-  right: 0, 
+  paddingTop: "1vmax",
   "@keyframes fadeIn": {
     "25%": {
       opacity: 0,
@@ -170,7 +167,6 @@ function App() {
       <MainContent>
         <TransitionGroup className="transition-group">
           <CSSTransition
-            unmountOnExit
             key={location.key}
             classNames="fade"
             timeout={{ exit: 1000, enter: 1000 }}
@@ -178,18 +174,19 @@ function App() {
             <section className="route-section">
               {/* Main Content in Switches */}
               <Switch location={location}>
-                <Route path="/cv">
+                <Route exact path="/cv">
                   {/* Resume Page */}
                   <CV />
                 </Route>
-                <Route path="/research">
+                <Route exact path="/research">
                   {/* Research Page */}
                   <Research />
                 </Route>
-                <Route path="/">
+                <Route exact path="/">
                   {/* Home Page */}
                   <Home />
                 </Route>
+                <Redirect from="*" to="/" />
               </Switch>
             </section>
           </CSSTransition>

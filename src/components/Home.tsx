@@ -2,16 +2,24 @@ import React from 'react';
 import { Row, Col } from 'react-grid-system';
 import styled from 'styled-components';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { FaTwitter, FaEnvelope, FaLinkedin } from 'react-icons/fa'
+
 
 
 const HomeText = styled.h2({
     textAlign: "center",
     fontFamily: "'Quattrocento', serif",
-    fontSize: "max(4vw, 14px)",
-    fontWeight: "normal"
+    fontSize: "max(4vw, 20px)",
+    fontWeight: "normal",
+    textTransform: "uppercase",
 })
 
-const VerticalBox = styled.div({
+const IconLink = styled.a({
+    textAlign: "center",
+    color: "white",
+    fontSize: "max(2vw, 20px)",
+    marginTop: "20vh",
+    padding: "auto",
 })
 
 const displayText = [
@@ -21,7 +29,7 @@ const displayText = [
     "Black Trans Woman",
     "Ph.D. Student",
     "Goth Wannabe",
-    "Human?"
+    "Human"
 ]
 
 interface HomeProps {
@@ -31,12 +39,14 @@ interface HomeProps {
 
 const cycleTime = 3000;
 
+const IconDiv = styled.div({
+    marginTop: "18vmax",
+    paddingTop: 0,
+})
+
 
 
 const TextFader = styled.div({
-
-    paddingTop: "15vh",
-    paddingBottom : "5vh",
 
     ".fade-enter": {
         opacity: 0,
@@ -57,16 +67,16 @@ const TextFader = styled.div({
         transition: "opacity 500ms ease-in",
     },
 
-    "div.transition-group": {
+    ".transition-group": {
         position: "relative",
     },
 
     ".fading-text": {
         position: "absolute",
         width: "100%",
-        top: 0,
-        left: 0,
-        padding: 0,
+        marginTop: "7vmax",
+        alignContent: "center",
+        verticalAlign: "center",
     }
 })
 
@@ -97,33 +107,51 @@ export default class Home extends React.Component<{}, HomeProps> {
         clearInterval(this.state.handle);
     }
 
+    altText = displayText.join(". ")
+
 
     render() {
         return (
             <TextFader>
                 <Row>
                     <Col xs={12}>
-                        <VerticalBox>
-                            <TransitionGroup className="transition-group">
+                        <TransitionGroup className="transition-group">
 
-                                {displayText.map((value, index) => this.state.index == index &&
+                            {displayText.map((value, index) => this.state.index === index &&
 
-                                    <CSSTransition
-                                        key={index}
-                                        classNames="fade"
-                                        timeout={{ exit: 1000, enter: 1000 }}
-                                    >
-                                        <HomeText className="fading-text">
-                                            {value}
-                                        </HomeText>
+                                <CSSTransition
+                                    key={index}
+                                    classNames="fade"
+                                    timeout={{ exit: 1000, enter: 1000 }}
+                                >
+                                    <HomeText className="fading-text">
+                                        {value}
+                                    </HomeText>
 
-                                    </CSSTransition>)}
-                            </TransitionGroup>
-                        </VerticalBox>
+                                </CSSTransition>)}
+                        </TransitionGroup>
                     </Col>
                 </Row>
+                <IconDiv>
+                    <Row justify="center">
+                        <Col xs={1}>
+                            <IconLink target="_blank" rel="noopener noreferrer" href="https://twitter.com/AureliaAugusta">
+                                <FaTwitter title="Twitter" />
+                            </IconLink>
+                        </Col>
+                        <Col xs={1}>
+                            <IconLink target="_blank" rel="noopener noreferrer" href="mailto:aevangeline@pm.me">
+                                <FaEnvelope title="E-Mail" />
+                            </IconLink>
+                        </Col>
+                        <Col xs={1}>
+                            <IconLink target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/aurelia-augusta-3a4ab982/">
+                                <FaLinkedin title="LinkedIn"/>
+                            </IconLink>
+                        </Col>
+                    </Row>
+                </IconDiv>
             </TextFader>
-
         )
     }
 }
