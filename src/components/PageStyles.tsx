@@ -20,7 +20,8 @@ export const SubHeader = styled.h2({
 export const Descriptor = styled.h3({
     fontFamily: "'Quattrocento', serif",
     fontSize: "max(1.1vw, 14px)",
-    textAlign: "center"
+    textAlign: "center",
+    fontWeight: 700, 
 })
 
 export const PageText = styled.p({
@@ -30,8 +31,8 @@ export const PageText = styled.p({
 })
 
 export const Emph = styled.b({
-    fontWeight: "normal",
     color : HighlightColor,
+    fontWeight: 700,
 })
 
 export const Container = styled.div({
@@ -40,7 +41,7 @@ export const Container = styled.div({
     borderWidth: "2px",
     borderBottom: "none",
     borderTop: "none",
-    borderRadius: 8,
+    borderRadius: 10,
     paddingLeft: "5px",
     paddingRight: "5px",
 })
