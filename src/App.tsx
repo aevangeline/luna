@@ -11,16 +11,16 @@ import {
 
 // import routes
 import Home from './components/Home';
-import CV from './components/CV';
+import Resume from './components/Resume';
 import Research from './components/Research';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import { HighlightColor } from './components/PageStyles';
 
 const NameHeader = styled.h1({
   textAlign: "center",
   fontFamily: "'Cinzel Decorative', cursive",
   fontSize: "5vw",
   opacity: 0,
-  fontKerning: "normal", 
   animation: "fadeIn ease 3s",
   animationFillMode: "forwards",
   "@keyframes fadeIn": {
@@ -40,7 +40,6 @@ const Navbar = styled.nav({
   justifyContent: "center",
   display: "flex",
   textAlign: "center",
-  fontKerning: "normal", 
   opacity: 0,
   animation: "fadeIn ease 4s",
   animationFillMode: "forwards",
@@ -86,7 +85,7 @@ const NavBarLink = styled(NavLink)({
   textAlign: "center",
 
   "&.active": {
-    color: "#e6c200",
+    color: HighlightColor,
   }
 })
 
@@ -158,7 +157,7 @@ function App() {
                 <NavBarLink to="/research">Research</NavBarLink>
               </NavItem>
               <NavItem>
-                <NavBarLink to="/cv">Curriculum Vitae</NavBarLink>
+                <NavBarLink to="/resume">Résumé</NavBarLink>
               </NavItem>
             </NavList>
           </Navbar>
@@ -174,9 +173,9 @@ function App() {
             <section className="route-section">
               {/* Main Content in Switches */}
               <Switch location={location}>
-                <Route exact path="/cv">
+                <Route exact path="/resume">
                   {/* Resume Page */}
-                  <CV />
+                  <Resume />
                 </Route>
                 <Route exact path="/research">
                   {/* Research Page */}

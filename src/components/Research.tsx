@@ -1,5 +1,6 @@
 import React from 'react';
 import {Row, Col} from 'react-grid-system';
+import {Header, Container, SubHeader} from "./PageStyles";
 
 export default class Research extends React.Component<{}, {}> {
     
@@ -10,9 +11,12 @@ export default class Research extends React.Component<{}, {}> {
 
     render() {
        return( 
-       <Row>
-           <Col xs={12}>
-                <h2> Research page</h2>
+       <Row justify="center">
+           <Col xs={10}>
+               <Container>
+                    <Header>Research</Header>
+               <    SubHeader>Under Construction : Pending name change on previous publications</SubHeader>
+               </Container>
            </Col>
        </Row>
        )
