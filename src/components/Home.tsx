@@ -90,20 +90,13 @@ export default class Home extends React.Component<{}, HomeProps> {
         this.state = {
             ...props,
             index: 0,
-            handle: 0,
+            handle: setInterval(() => { this.updateRole() }
+            , cycleTime),
         };
     }
 
     updateRole() {
         this.setState({ index: (this.state.index + 1) % displayText.length })
-    }
-
-
-    componentDidMount() {
-        this.setState({
-            handle: setInterval(() => { this.updateRole() }
-                , cycleTime)
-        })
     }
 
     componentWillMount() {
