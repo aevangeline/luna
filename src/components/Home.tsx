@@ -43,6 +43,8 @@ const cycleTime = 3000;
 const IconDiv = styled.div({
     marginTop: "18vmax",
     paddingTop: 0,
+    alignContent: "center",
+    textAlign: "center",
 })
 
 
@@ -133,8 +135,11 @@ export default class Home extends React.Component<{}, HomeProps> {
                         </TransitionGroup>
                     </Col>
                 </Row>
-                <IconDiv>
+
                     <Row justify="center">
+                        <Col xs={12}>
+                        <IconDiv>
+
                             <IconLink target="_blank" rel="noopener noreferrer" href="https://twitter.com/AureliaAugusta">
                                 <FaTwitter title="Twitter" />
                             </IconLink>
@@ -144,8 +149,10 @@ export default class Home extends React.Component<{}, HomeProps> {
                             <IconLink target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/aurelia-augusta-3a4ab982/">
                                 <FaLinkedin title="LinkedIn"/>
                             </IconLink>
+                            </IconDiv>
+                        </Col>
                     </Row>
-                </IconDiv>
+
             </TextFader>
         )
     }
