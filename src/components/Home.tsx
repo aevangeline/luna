@@ -20,6 +20,7 @@ const IconLink = styled.a({
     fontSize: "max(2vw, 20px)",
     marginTop: "20vh",
     padding: "auto",
+    marginRight: "max(3vw, 10px)"
 })
 
 const displayText = [
@@ -134,21 +135,15 @@ export default class Home extends React.Component<{}, HomeProps> {
                 </Row>
                 <IconDiv>
                     <Row justify="center">
-                        <Col xs={1}>
                             <IconLink target="_blank" rel="noopener noreferrer" href="https://twitter.com/AureliaAugusta">
                                 <FaTwitter title="Twitter" />
                             </IconLink>
-                        </Col>
-                        <Col xs={1}>
                             <IconLink target="_blank" rel="noopener noreferrer" href="mailto:aevangeline@pm.me">
                                 <FaEnvelope title="E-Mail" />
                             </IconLink>
-                        </Col>
-                        <Col xs={1}>
                             <IconLink target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/aurelia-augusta-3a4ab982/">
                                 <FaLinkedin title="LinkedIn"/>
                             </IconLink>
-                        </Col>
                     </Row>
                 </IconDiv>
             </TextFader>
