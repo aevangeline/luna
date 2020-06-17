@@ -91,7 +91,7 @@ export default class Home extends React.Component<{}, HomeProps> {
             ...props,
             index: 0,
             handle: setInterval(() => { this.updateRole() }
-            , cycleTime),
+                , cycleTime),
         };
     }
 
@@ -129,8 +129,8 @@ export default class Home extends React.Component<{}, HomeProps> {
                     </Col>
                 </Row>
 
-                    <Row justify="center">
-                        <Col xs={12}>
+                <Row justify="center">
+                    <Col xs={12}>
                         <IconDiv>
 
                             <IconLink target="_blank" rel="noopener noreferrer" href="https://twitter.com/AureliaAugusta">
@@ -140,11 +140,11 @@ export default class Home extends React.Component<{}, HomeProps> {
                                 <FaEnvelope title="E-Mail" />
                             </IconLink>
                             <IconLink target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/aurelia-augusta-3a4ab982/">
-                                <FaLinkedin title="LinkedIn"/>
+                                <FaLinkedin title="LinkedIn" />
                             </IconLink>
-                            </IconDiv>
-                        </Col>
-                    </Row>
+                        </IconDiv>
+                    </Col>
+                </Row>
 
             </TextFader>
         )
