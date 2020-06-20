@@ -99,7 +99,7 @@ export default class Home extends React.Component<{}, HomeProps> {
         this.setState({ index: (this.state.index + 1) % displayText.length })
     }
 
-    componentWillMount() {
+    componentWillUnmount() {
         clearInterval(this.state.handle);
     }
 

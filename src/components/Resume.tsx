@@ -11,9 +11,6 @@ export default class Resume extends React.Component<{}, {}> {
     }
 
     render() {
-
-
-
         return (
 
             <Row justify="center">
