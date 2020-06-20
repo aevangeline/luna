@@ -30,6 +30,8 @@ const displayText = [
     "Black Trans Woman",
     "Ph.D. Student",
     "Goth Wannabe",
+    "Nigerian-American",
+    "Aspiring Anime Villainess",
     "Human"
 ]
 
