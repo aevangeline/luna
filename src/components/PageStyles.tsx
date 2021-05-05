@@ -35,6 +35,10 @@ export const Emph = styled.b({
     fontWeight: 700,
 })
 
+export const PaperLink = styled.a({
+    color : HighlightColor
+})
+
 export const Container = styled.div({
     borderStyle: "solid",
     borderColor: "#FFFFFF",

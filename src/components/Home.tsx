@@ -37,7 +37,7 @@ const displayText = [
 
 interface HomeProps {
     index: number,
-    handle: number,
+    handle: ReturnType<typeof setTimeout>,
 }
 
 const cycleTime = 3000;
