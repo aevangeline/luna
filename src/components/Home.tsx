@@ -135,7 +135,7 @@ export default class Home extends React.Component<{}, HomeProps> {
                     <Col xs={12}>
                         <IconDiv>
 
-                            <IconLink target="_blank" rel="noopener noreferrer" href="https://twitter.com/AureliaAugusta">
+                            <IconLink target="_blank" rel="noopener noreferrer" href="https://twitter.com/feu_et_roses">
                                 <FaTwitter title="Twitter" />
                             </IconLink>
                             <IconLink target="_blank" rel="noopener noreferrer" href="mailto:aevangeline@pm.me">
